@@ -28,44 +28,54 @@
           "Segoe UI",
           sans-serif;
       }
+
       * {
         box-sizing: border-box;
       }
+
       html,
       body {
         margin: 0;
         width: 100%;
         height: 100%;
       }
+
       body {
         padding: 4px;
         background: transparent;
         color: var(--ink);
       }
+
       button,
       select,
       input {
         font: inherit;
       }
+
       button,
       select {
         color: inherit;
       }
+
       button {
         cursor: pointer;
       }
+
       button:disabled {
         cursor: default;
       }
+
       [hidden] {
         display: none !important;
       }
+
       button:focus-visible,
       select:focus-visible,
       input:focus-visible {
         outline: 2px solid var(--accent);
         outline-offset: 2px;
       }
+
       .calendar {
         container: calendar / inline-size;
         width: 100%;
@@ -81,27 +91,32 @@
         background: var(--surface);
         overflow: auto;
       }
+
       body.preview {
         display: grid;
         place-items: center;
         padding: 16px;
         background: var(--tint);
       }
+
       body.preview .calendar {
         width: min(100%, 480px);
         height: min(100%, 480px);
         box-shadow: 0 12px 40px #30203912;
       }
+
       .header {
         display: grid;
         grid-template-columns: 34px minmax(0, 1fr) 34px;
         gap: 6px;
         align-items: center;
       }
+
       .title-group {
         text-align: center;
         min-width: 0;
       }
+
       h1 {
         margin: 0;
         font-size: clamp(16px, 4.5cqi, 21px);
@@ -109,12 +124,14 @@
         line-height: 1.25;
         letter-spacing: -0.035em;
       }
+
       .view-label {
         display: block;
         font-size: 12px;
         line-height: 1.5;
         color: var(--muted);
       }
+
       .icon,
       .plain {
         display: inline-grid;
@@ -125,25 +142,31 @@
         border-radius: 10px;
         background: transparent;
       }
+
       .icon {
         font-size: 22px;
         line-height: 1;
       }
+
       .icon:hover,
-      .plain:hover {
+      .plain:hover,
+      .month-jump:hover {
         background: var(--soft);
         border-color: var(--line);
       }
+
       .plain {
         font-size: 13px;
         padding: 4px 10px;
         font-weight: 550;
       }
+
       .calendar-body {
         min-height: 0;
         display: grid;
         grid-template-columns: minmax(0, 1fr);
       }
+
       .month-pane {
         min-width: 0;
         min-height: 0;
@@ -151,12 +174,14 @@
         grid-template-rows: 24px minmax(0, 1fr);
         gap: 4px;
       }
+
       .weekdays,
       .week {
         display: grid;
         grid-template-columns: repeat(7, minmax(0, 1fr));
         gap: 2px;
       }
+
       .weekdays span {
         display: grid;
         place-items: center;
@@ -164,12 +189,14 @@
         color: var(--muted);
         font-weight: 550;
       }
+
       .weeks {
         min-height: 0;
         display: grid;
         grid-template-rows: repeat(var(--rows, 5), minmax(0, 1fr));
         gap: 4px;
       }
+
       .week {
         align-items: center;
         border-radius: 12px;
@@ -177,9 +204,11 @@
         min-height: 28px;
         padding: 2px;
       }
+
       .week.current {
         background: var(--tint);
       }
+
       .cell {
         display: grid;
         place-items: center;
@@ -187,6 +216,7 @@
         height: 100%;
         container-type: size;
       }
+
       .day {
         display: grid;
         align-content: center;
@@ -204,37 +234,45 @@
         font-variant-numeric: tabular-nums;
         line-height: 1.1;
       }
+
       .day:hover {
         background: var(--surface);
         border-color: var(--line);
       }
+
       .day.outside {
         color: var(--muted);
       }
+
       .day.today {
         background: var(--accent);
         color: #fff;
         font-weight: 700;
       }
+
       .day.selected:not(.today) {
         border-color: var(--accent);
         background: var(--surface);
         box-shadow: inset 0 0 0 1px var(--accent);
       }
+
       .dots {
         height: 4px;
         display: flex;
         gap: 2px;
       }
+
       .dot {
         width: 4px;
         height: 4px;
         background: var(--event-color, var(--accent));
         border-radius: 50%;
       }
+
       .today .dot {
         background: var(--today-ink, #fff);
       }
+
       .footer {
         border-top: 1px solid var(--line);
         padding-top: 8px;
@@ -242,12 +280,14 @@
         gap: 4px;
         min-width: 0;
       }
+
       .footer-line {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 8px;
       }
+
       .selected-label {
         font-size: 12px;
         color: var(--muted);
@@ -255,11 +295,13 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
       .footer-actions {
         display: flex;
         gap: 2px;
         flex-shrink: 0;
       }
+
       .details-button {
         display: flex;
         align-items: center;
@@ -274,20 +316,24 @@
         font-size: 13px;
         min-height: 36px;
       }
+
       .details-button:not(:disabled):hover {
         border-color: var(--accent);
       }
+
       .detail-summary {
         min-width: 0;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
+
       .detail-action {
         color: var(--accent);
         white-space: nowrap;
         font-size: 12px;
       }
+
       .agenda {
         display: none;
         min-width: 0;
@@ -296,10 +342,12 @@
         padding: 8px 0 8px 18px;
         border-left: 1px solid var(--line);
       }
+
       .agenda h2 {
         font-size: 14px;
         margin: 0 0 12px;
       }
+
       .events {
         list-style: none;
         padding: 0;
@@ -307,6 +355,7 @@
         display: grid;
         gap: 10px;
       }
+
       .event {
         display: grid;
         grid-template-columns: 7px minmax(0, 1fr);
@@ -314,56 +363,87 @@
         align-items: start;
         padding: 8px 0;
       }
+
       .event .dot {
         margin-top: 6px;
         width: 6px;
         height: 6px;
       }
+
       .event-title {
         font-size: 14px;
         line-height: 1.45;
         overflow-wrap: anywhere;
       }
+
       .event-meta {
         display: block;
         color: var(--muted);
         font-size: 12px;
         margin-top: 3px;
       }
+
       .empty {
         color: var(--muted);
         font-size: 13px;
         line-height: 1.5;
       }
+
       .calendar[data-layout="wide"] .calendar-body {
         grid-template-columns: minmax(0, 1.4fr) minmax(200px, 1fr);
         gap: 18px;
       }
+
       .calendar[data-layout="wide"] .agenda {
         display: block;
       }
+
       .calendar[data-layout="wide"] .details-button {
         display: none;
       }
+
       .calendar[data-view="week"] .day {
         border-radius: 12px;
         max-height: 64px;
       }
+
       .calendar[data-tight="true"] {
         gap: 5px;
         --pad: 10px;
       }
+
       .calendar[data-tight="true"] .footer {
         padding-top: 3px;
         gap: 1px;
       }
+
       .calendar[data-tight="true"] .details-button {
         min-height: 28px;
         padding-block: 4px;
       }
+
       .calendar[data-tight="true"] .month-pane {
         grid-template-rows: 20px minmax(0, 1fr);
       }
+
+      .month-jump {
+        font: inherit;
+        letter-spacing: inherit;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        border-radius: 8px;
+        padding: 3px 7px;
+        max-width: 100%;
+      }
+
+      .month-jump::after {
+        content: "⌄";
+        font-size: 13px;
+        margin-left: 6px;
+        color: var(--muted);
+      }
+
       dialog {
         color: var(--ink);
         background: var(--surface);
@@ -376,9 +456,11 @@
         overflow: auto;
         box-shadow: 0 16px 48px #0003;
       }
+
       dialog::backdrop {
         background: #17111f38;
       }
+
       .dialog-head {
         position: sticky;
         top: 0;
@@ -390,19 +472,23 @@
         border-bottom: 1px solid var(--line);
         z-index: 1;
       }
+
       .dialog-head h2 {
         font-size: 16px;
         margin: 0;
       }
+
       .dialog-content {
         padding: 16px;
       }
+
       .field {
         display: grid;
         gap: 6px;
         margin-bottom: 16px;
         font-size: 14px;
       }
+
       select {
         width: 100%;
         padding: 9px;
@@ -410,6 +496,7 @@
         border-radius: 9px;
         background: var(--soft);
       }
+
       .check {
         display: flex;
         align-items: center;
@@ -417,35 +504,19 @@
         margin: 16px 0;
         font-size: 14px;
       }
+
       input {
         accent-color: var(--accent);
         width: 18px;
         height: 18px;
       }
-      .month-jump {
-        font: inherit;
-        letter-spacing: inherit;
-        border: 0;
-        background: transparent;
-        color: inherit;
-        border-radius: 8px;
-        padding: 3px 7px;
-        max-width: 100%;
-      }
-      .month-jump:hover {
-        background: var(--soft);
-      }
-      .month-jump::after {
-        content: "⌄";
-        font-size: 13px;
-        margin-left: 6px;
-        color: var(--muted);
-      }
+
       .jump-fields {
         display: grid;
         grid-template-columns: minmax(0, 1fr) 90px;
         gap: 10px;
       }
+
       input[type="number"] {
         width: 100%;
         height: auto;
@@ -455,6 +526,7 @@
         background: var(--soft);
         color: var(--ink);
       }
+
       fieldset {
         border: 1px solid var(--line);
         border-radius: 10px;
@@ -462,25 +534,30 @@
         margin: 0 0 16px;
         min-width: 0;
       }
+
       legend {
         font-size: 13px;
         color: var(--muted);
         padding: 0 4px;
       }
+
       .primary {
         background: var(--accent);
         color: var(--today-ink, #fff);
         min-height: 36px;
       }
+
       .primary:hover {
         background: var(--accent);
         opacity: 0.9;
       }
+
       .note {
         font-size: 12px;
         color: var(--muted);
         line-height: 1.5;
       }
+
       .sr-only {
         position: absolute;
         width: 1px;
@@ -489,23 +566,26 @@
         clip-path: inset(50%);
         white-space: nowrap;
       }
+
       @media (prefers-reduced-motion: no-preference) {
         button {
-          transition:
-            background 0.12s,
-            border-color 0.12s;
+          transition: background 0.12s, border-color 0.12s;
         }
       }
+
       @media (forced-colors: active) {
         .day.today {
           outline: 2px solid Highlight;
         }
+
         .day.selected {
           border: 2px solid Highlight;
         }
+
         .week {
           border: 1px solid CanvasText;
         }
+
         .dot {
           background: CanvasText;
         }
@@ -531,6 +611,7 @@
         </div>
         <button class="icon" id="next" aria-label="Next month" title="Next month">›</button>
       </header>
+
       <div class="calendar-body">
         <section
           class="month-pane"
@@ -542,65 +623,66 @@
           <div class="weekdays" role="row" id="weekdays"></div>
           <div class="weeks" role="rowgroup" id="weeks"></div>
         </section>
+
         <aside class="agenda" aria-label="Selected day events">
           <h2 id="agendaDate"></h2>
           <div id="agendaContent"></div>
         </aside>
       </div>
+
       <footer class="footer">
         <div class="footer-line">
           <span class="selected-label" id="selectedLabel"></span>
           <div class="footer-actions">
-            <button class="plain" id="todayButton">Today</button>
+            <button class="plain" id="todayButton" type="button">Today</button>
             <button
               class="plain"
               id="settingsButton"
               aria-haspopup="dialog"
               aria-label="Calendar settings"
               title="Calendar settings"
+              type="button"
             >
               •••
             </button>
           </div>
         </div>
-        <button class="details-button" id="detailsButton" aria-haspopup="dialog">
-          <span class="detail-summary" id="summary"></span
-          ><span class="detail-action" id="detailAction">View</span>
+        <button class="details-button" id="detailsButton" aria-haspopup="dialog" type="button">
+          <span class="detail-summary" id="summary"></span>
+          <span class="detail-action" id="detailAction">View</span>
         </button>
       </footer>
+
       <p class="sr-only" id="keyboardHelp">
         Use arrow keys to move by day or week. Home and End move to the ends of the week. Page Up
         and Page Down change months; hold Shift to change years.
       </p>
-      <p class="sr-only" id="status" role="status"></p>
+      <p class="sr-only" id="status" role="status" aria-live="polite"></p>
     </main>
+
     <dialog id="settings" aria-labelledby="settingsTitle">
       <div class="dialog-head">
         <h2 id="settingsTitle">Calendar settings</h2>
-        <button class="plain" data-close aria-label="Close settings">Close</button>
+        <button class="plain" data-close aria-label="Close settings" type="button">Close</button>
       </div>
       <div class="dialog-content">
         <label class="field">Colour<select id="themeSelect"></select></label>
-        <label class="field"
-          >Appearance<select id="modeSelect">
+        <label class="field">
+          Appearance<select id="modeSelect">
             <option value="light">Light</option>
             <option value="dark">Dark</option>
             <option value="system">Match device</option>
-          </select></label
-        >
-        <label class="field"
-          >Calendar view<select id="viewSelect">
+          </select>
+        </label>
+        <label class="field">
+          Calendar view<select id="viewSelect">
             <option value="auto">Automatic — fits the embed</option>
             <option value="month">Month</option>
             <option value="week">Week</option>
-          </select></label
-        >
-        <label class="check"
-          ><input type="checkbox" id="mondayToggle" />Start weeks on Monday</label
-        >
-        <label class="check"
-          ><input type="checkbox" id="eventsToggle" />Show preset dates and observances</label
-        >
+          </select>
+        </label>
+        <label class="check"><input type="checkbox" id="mondayToggle" />Start weeks on Monday</label>
+        <label class="check"><input type="checkbox" id="eventsToggle" />Show preset dates and observances</label>
         <fieldset id="categoryFilters"><legend>Visible date categories</legend></fieldset>
         <p class="note">
           Preset dates cover 2026: Victorian holidays and school dates, plus selected observances.
@@ -610,41 +692,45 @@
           Match device follows your operating system, not Notion’s theme. Choose Light or Dark to
           match your page.
         </p>
-        <button class="plain" id="resetButton">Reset settings</button>
+        <button class="plain" id="resetButton" type="button">Reset settings</button>
         <p class="note" id="saveNote">These choices are saved in this browser.</p>
       </div>
     </dialog>
+
     <dialog id="eventDialog" aria-labelledby="eventTitle">
       <div class="dialog-head">
         <h2 id="eventTitle"></h2>
-        <button class="plain" data-close aria-label="Close events">Close</button>
+        <button class="plain" data-close aria-label="Close events" type="button">Close</button>
       </div>
       <div class="dialog-content" id="eventContent"></div>
     </dialog>
+
     <dialog id="jumpDialog" aria-labelledby="jumpTitle">
       <div class="dialog-head">
         <h2 id="jumpTitle">Jump to month</h2>
-        <button class="plain" data-close aria-label="Close month navigation">Close</button>
+        <button class="plain" data-close aria-label="Close month navigation" type="button">Close</button>
       </div>
       <form class="dialog-content" id="jumpForm">
         <div class="jump-fields">
-          <label class="field">Month<select id="jumpMonth"></select></label
-          ><label class="field"
-            >Year<input id="jumpYear" type="number" min="1900" max="2100" step="1" required
-          /></label>
+          <label class="field">Month<select id="jumpMonth"></select></label>
+          <label class="field">
+            Year<input id="jumpYear" type="number" min="1900" max="2100" step="1" required />
+          </label>
         </div>
         <button class="plain primary" type="submit">Show month</button>
       </form>
     </dialog>
+
     <script>
-      "use strict";
       (() => {
+        "use strict";
+
         const $ = (id) => document.getElementById(id);
-        const card = $("calendar"),
-          params = new URLSearchParams(location.search);
-        const preview = params.get("preview") === "1" && !params.has("embed");
-        document.body.classList.toggle("preview", preview);
-        // 1. Appearance tokens and preset date categories.
+        const card = $("calendar");
+        const mediaQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+        const STORAGE_KEY = "little-widgets-mini-calendar-v2";
+
         const THEMES = {
           default: ["Lilac", "#eee7f7", "#65497d"],
           gray: ["Grey", "#eeece9", "#57534f"],
@@ -657,6 +743,7 @@
           pink: ["Pink", "#f5e2eb", "#874967"],
           red: ["Red", "#f8e2df", "#90483f"],
         };
+
         const CATEGORIES = {
           holiday: ["Public holiday", "#68636e"],
           school: ["School", "#a57432"],
@@ -664,7 +751,7 @@
           observance: ["Observance", "#7964ae"],
           wellbeing: ["Wellbeing", "#397e77"],
         };
-        // 2. Existing 2026 dataset. Add dates here; no remote calendar is connected.
+
         const EVENT_TYPE = {
           HOLIDAY: "holiday",
           SCHOOL: "school",
@@ -672,7 +759,8 @@
           OBSERVANCE: "observance",
           WELLBEING: "wellbeing",
         };
-        const EVENTS = buildEventMap([
+
+        const EVENT_ITEMS = [
           { date: "2026-01-01", label: "New Year's Day", type: EVENT_TYPE.HOLIDAY },
           { date: "2026-01-26", label: "Australia Day", type: EVENT_TYPE.HOLIDAY },
           { date: "2026-03-09", label: "Labour Day", type: EVENT_TYPE.HOLIDAY },
@@ -682,108 +770,36 @@
           { date: "2026-04-06", label: "Easter Monday", type: EVENT_TYPE.HOLIDAY },
           { date: "2026-04-25", label: "ANZAC Day", type: EVENT_TYPE.HOLIDAY },
           { date: "2026-06-08", label: "King's Birthday", type: EVENT_TYPE.HOLIDAY },
-          {
-            date: "2026-09-25",
-            label: "Friday before the AFL Grand Final",
-            type: EVENT_TYPE.HOLIDAY,
-          },
+          { date: "2026-09-25", label: "Friday before the AFL Grand Final", type: EVENT_TYPE.HOLIDAY },
           { date: "2026-11-03", label: "Melbourne Cup", type: EVENT_TYPE.HOLIDAY },
           { date: "2026-12-25", label: "Christmas Day", type: EVENT_TYPE.HOLIDAY },
           { date: "2026-12-26", label: "Boxing Day", type: EVENT_TYPE.HOLIDAY },
-          {
-            date: "2026-12-28",
-            label: "Additional public holiday for Boxing Day",
-            type: EVENT_TYPE.HOLIDAY,
-          },
+          { date: "2026-12-28", label: "Additional public holiday for Boxing Day", type: EVENT_TYPE.HOLIDAY },
           { date: "2026-01-28", label: "School Term 1 starts", type: EVENT_TYPE.SCHOOL },
           { date: "2026-04-02", label: "School Term 1 ends", type: EVENT_TYPE.SCHOOL },
-          {
-            start: "2026-04-03",
-            end: "2026-04-17",
-            label: "Autumn school holidays",
-            type: EVENT_TYPE.SCHOOL,
-          },
+          { start: "2026-04-03", end: "2026-04-17", label: "Autumn school holidays", type: EVENT_TYPE.SCHOOL },
           { date: "2026-04-20", label: "School Term 2 starts", type: EVENT_TYPE.SCHOOL },
           { date: "2026-06-26", label: "School Term 2 ends", type: EVENT_TYPE.SCHOOL },
-          {
-            start: "2026-06-29",
-            end: "2026-07-10",
-            label: "Winter school holidays",
-            type: EVENT_TYPE.SCHOOL,
-          },
+          { start: "2026-06-29", end: "2026-07-10", label: "Winter school holidays", type: EVENT_TYPE.SCHOOL },
           { date: "2026-07-13", label: "School Term 3 starts", type: EVENT_TYPE.SCHOOL },
           { date: "2026-09-18", label: "School Term 3 ends", type: EVENT_TYPE.SCHOOL },
-          {
-            start: "2026-09-21",
-            end: "2026-10-02",
-            label: "Spring school holidays",
-            type: EVENT_TYPE.SCHOOL,
-          },
+          { start: "2026-09-21", end: "2026-10-02", label: "Spring school holidays", type: EVENT_TYPE.SCHOOL },
           { date: "2026-10-05", label: "School Term 4 starts", type: EVENT_TYPE.SCHOOL },
           { date: "2026-12-18", label: "School Term 4 ends", type: EVENT_TYPE.SCHOOL },
-          {
-            start: "2026-12-21",
-            end: "2026-12-31",
-            label: "Summer school holidays",
-            type: EVENT_TYPE.SCHOOL,
-          },
-          {
-            date: "2026-02-13",
-            label: "Anniversary of the National Apology",
-            type: EVENT_TYPE.FIRST_NATIONS,
-          },
-          {
-            date: "2026-03-19",
-            label: "National Close the Gap Day",
-            type: EVENT_TYPE.FIRST_NATIONS,
-          },
+          { start: "2026-12-21", end: "2026-12-31", label: "Summer school holidays", type: EVENT_TYPE.SCHOOL },
+          { date: "2026-02-13", label: "Anniversary of the National Apology", type: EVENT_TYPE.FIRST_NATIONS },
+          { date: "2026-03-19", label: "National Close the Gap Day", type: EVENT_TYPE.FIRST_NATIONS },
           { date: "2026-05-26", label: "National Sorry Day", type: EVENT_TYPE.FIRST_NATIONS },
-          {
-            start: "2026-05-27",
-            end: "2026-06-03",
-            label: "National Reconciliation Week",
-            type: EVENT_TYPE.FIRST_NATIONS,
-          },
-          {
-            start: "2026-07-05",
-            end: "2026-07-12",
-            label: "NAIDOC Week",
-            type: EVENT_TYPE.FIRST_NATIONS,
-          },
-          {
-            date: "2026-08-09",
-            label: "International Day of the World's Indigenous Peoples",
-            type: EVENT_TYPE.FIRST_NATIONS,
-          },
-          {
-            start: "2026-02-17",
-            end: "2026-02-21",
-            label: "Lunar New Year / Year of the Horse",
-            type: EVENT_TYPE.OBSERVANCE,
-          },
-          {
-            date: "2026-02-18",
-            label: "Ramadan begins (dates may vary)",
-            type: EVENT_TYPE.OBSERVANCE,
-          },
+          { start: "2026-05-27", end: "2026-06-03", label: "National Reconciliation Week", type: EVENT_TYPE.FIRST_NATIONS },
+          { start: "2026-07-05", end: "2026-07-12", label: "NAIDOC Week", type: EVENT_TYPE.FIRST_NATIONS },
+          { date: "2026-08-09", label: "International Day of the World's Indigenous Peoples", type: EVENT_TYPE.FIRST_NATIONS },
+          { start: "2026-02-17", end: "2026-02-21", label: "Lunar New Year / Year of the Horse", type: EVENT_TYPE.OBSERVANCE },
+          { date: "2026-02-18", label: "Ramadan begins (dates may vary)", type: EVENT_TYPE.OBSERVANCE },
           { date: "2026-03-04", label: "Holi", type: EVENT_TYPE.OBSERVANCE },
           { date: "2026-03-08", label: "International Women's Day", type: EVENT_TYPE.OBSERVANCE },
-          {
-            start: "2026-03-16",
-            end: "2026-03-22",
-            label: "Harmony Week",
-            type: EVENT_TYPE.OBSERVANCE,
-          },
-          {
-            date: "2026-03-20",
-            label: "Eid al-Fitr (dates may vary)",
-            type: EVENT_TYPE.OBSERVANCE,
-          },
-          {
-            date: "2026-03-21",
-            label: "International Day for the Elimination of Racial Discrimination",
-            type: EVENT_TYPE.OBSERVANCE,
-          },
+          { start: "2026-03-16", end: "2026-03-22", label: "Harmony Week", type: EVENT_TYPE.OBSERVANCE },
+          { date: "2026-03-20", label: "Eid al-Fitr (dates may vary)", type: EVENT_TYPE.OBSERVANCE },
+          { date: "2026-03-21", label: "International Day for the Elimination of Racial Discrimination", type: EVENT_TYPE.OBSERVANCE },
           { date: "2026-04-02", label: "World Autism Awareness Day", type: EVENT_TYPE.OBSERVANCE },
           { date: "2026-04-14", label: "Vaisakhi", type: EVENT_TYPE.OBSERVANCE },
           { date: "2026-05-01", label: "Vesak / Buddha Day", type: EVENT_TYPE.OBSERVANCE },
@@ -794,69 +810,27 @@
           { date: "2026-08-12", label: "International Youth Day", type: EVENT_TYPE.OBSERVANCE },
           { date: "2026-09-21", label: "International Day of Peace", type: EVENT_TYPE.OBSERVANCE },
           { date: "2026-09-25", label: "Mid-Autumn Festival", type: EVENT_TYPE.OBSERVANCE },
-          {
-            date: "2026-10-17",
-            label: "International Day for the Eradication of Poverty",
-            type: EVENT_TYPE.OBSERVANCE,
-          },
+          { date: "2026-10-17", label: "International Day for the Eradication of Poverty", type: EVENT_TYPE.OBSERVANCE },
           { date: "2026-11-08", label: "Diwali", type: EVENT_TYPE.OBSERVANCE },
           { date: "2026-11-11", label: "Remembrance Day", type: EVENT_TYPE.OBSERVANCE },
           { date: "2026-11-20", label: "World Children's Day", type: EVENT_TYPE.OBSERVANCE },
-          {
-            date: "2026-11-25",
-            label: "International Day for the Elimination of Violence against Women",
-            type: EVENT_TYPE.OBSERVANCE,
-          },
-          {
-            date: "2026-12-03",
-            label: "International Day of People with Disability",
-            type: EVENT_TYPE.OBSERVANCE,
-          },
-          {
-            start: "2026-12-04",
-            end: "2026-12-12",
-            label: "Hanukkah",
-            type: EVENT_TYPE.OBSERVANCE,
-          },
+          { date: "2026-11-25", label: "International Day for the Elimination of Violence against Women", type: EVENT_TYPE.OBSERVANCE },
+          { date: "2026-12-03", label: "International Day of People with Disability", type: EVENT_TYPE.OBSERVANCE },
+          { start: "2026-12-04", end: "2026-12-12", label: "Hanukkah", type: EVENT_TYPE.OBSERVANCE },
           { date: "2026-12-10", label: "Human Rights Day", type: EVENT_TYPE.OBSERVANCE },
           { date: "2026-04-07", label: "World Health Day", type: EVENT_TYPE.WELLBEING },
           { date: "2026-05-12", label: "International Nurses Day", type: EVENT_TYPE.WELLBEING },
-          {
-            start: "2026-06-15",
-            end: "2026-06-21",
-            label: "Men's Health Week",
-            type: EVENT_TYPE.WELLBEING,
-          },
+          { start: "2026-06-15", end: "2026-06-21", label: "Men's Health Week", type: EVENT_TYPE.WELLBEING },
           { date: "2026-09-10", label: "World Suicide Prevention Day", type: EVENT_TYPE.WELLBEING },
-          {
-            start: "2026-10-01",
-            end: "2026-10-31",
-            label: "Mental Health Month",
-            type: EVENT_TYPE.WELLBEING,
-          },
-          {
-            start: "2026-10-01",
-            end: "2026-10-07",
-            label: "BPD Awareness Week",
-            type: EVENT_TYPE.WELLBEING,
-          },
+          { start: "2026-10-01", end: "2026-10-31", label: "Mental Health Month", type: EVENT_TYPE.WELLBEING },
+          { start: "2026-10-01", end: "2026-10-07", label: "BPD Awareness Week", type: EVENT_TYPE.WELLBEING },
           { date: "2026-10-10", label: "World Mental Health Day", type: EVENT_TYPE.WELLBEING },
           { date: "2026-10-10", label: "World Homeless Day", type: EVENT_TYPE.WELLBEING },
-          {
-            start: "2026-10-11",
-            end: "2026-10-17",
-            label: "National Carers Week",
-            type: EVENT_TYPE.WELLBEING,
-          },
-          {
-            start: "2026-10-11",
-            end: "2026-10-17",
-            label: "OCD Awareness Week",
-            type: EVENT_TYPE.WELLBEING,
-          },
-        ]);
-        // 3. Preferences and selected-date state.
-        const defaults = {
+          { start: "2026-10-11", end: "2026-10-17", label: "National Carers Week", type: EVENT_TYPE.WELLBEING },
+          { start: "2026-10-11", end: "2026-10-17", label: "OCD Awareness Week", type: EVENT_TYPE.WELLBEING },
+        ];
+
+        const DEFAULT_PREFS = {
           theme: "default",
           mode: "light",
           view: "auto",
@@ -864,15 +838,7 @@
           showEvents: true,
           hiddenCategories: [],
         };
-        const storageKey = "little-widgets-mini-calendar-v2";
-        let prefs = readPrefs(),
-          today = localDay(new Date()),
-          selected = localDay(today);
-        let preferredDay = selected.getDate(),
-          view = "month",
-          rows = 5,
-          resizeFrame;
-        const media = matchMedia("(prefers-color-scheme: dark)");
+
         const fullDate = new Intl.DateTimeFormat("en-AU", {
           weekday: "long",
           day: "numeric",
@@ -885,103 +851,147 @@
           month: "short",
         });
         const monthFormat = new Intl.DateTimeFormat("en-AU", { month: "long", year: "numeric" });
-        const eventYears = new Set(Object.keys(EVENTS).map((key) => Number(key.slice(0, 4))));
 
-        function readPrefs() {
-          try {
-            const value = JSON.parse(localStorage.getItem(storageKey));
-            if (!value || typeof value !== "object" || Array.isArray(value)) return { ...defaults };
-            return {
-              theme: Object.hasOwn(THEMES, value.theme) ? value.theme : "default",
-              mode: ["light", "dark", "system"].includes(value.mode) ? value.mode : "light",
-              view: ["auto", "month", "week"].includes(value.view) ? value.view : "auto",
-              mondayFirst: value.mondayFirst !== false,
-              showEvents: value.showEvents !== false,
-              hiddenCategories: Array.isArray(value.hiddenCategories)
-                ? value.hiddenCategories.filter((key) => Object.hasOwn(CATEGORIES, key))
-                : [],
-            };
-          } catch {
-            return { ...defaults };
-          }
-        }
-        function save() {
-          try {
-            localStorage.setItem(storageKey, JSON.stringify(prefs));
-            $("saveNote").textContent = "These choices are saved in this browser.";
-          } catch {
-            $("saveNote").textContent =
-              "Browser storage is unavailable. Choices apply until this page closes.";
-          }
-        }
-        // 4. Local-noon date arithmetic avoids UTC date shifts around midnight.
-        function localDay(date) {
+        const state = {
+          today: startOfDay(new Date()),
+          selected: startOfDay(new Date()),
+          monthCursor: new Date(new Date().getFullYear(), new Date().getMonth(), 1),
+          view: "month",
+          prefs: readPrefs(),
+        };
+
+        const EVENTS = buildEventMap(EVENT_ITEMS);
+        const settingsDialog = $("settings");
+        const eventDialog = $("eventDialog");
+        const jumpDialog = $("jumpDialog");
+
+        function startOfDay(date) {
           return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 12);
         }
+
         function addDays(date, count) {
           return new Date(date.getFullYear(), date.getMonth(), date.getDate() + count, 12);
         }
-        function dateKey(date) {
-          return [
-            date.getFullYear(),
-            String(date.getMonth() + 1).padStart(2, "0"),
-            String(date.getDate()).padStart(2, "0"),
-          ].join("-");
+
+        function cloneDate(date) {
+          return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 12);
         }
-        function dateFromKey(key) {
+
+        function dateKey(date) {
+          const year = date.getFullYear();
+          const month = String(date.getMonth() + 1).padStart(2, "0");
+          const day = String(date.getDate()).padStart(2, "0");
+          return `${year}-${month}-${day}`;
+        }
+
+        function parseKey(key) {
           if (!/^\d{4}-\d{2}-\d{2}$/.test(key)) return null;
-          const [y, m, d] = key.split("-").map(Number),
-            date = new Date(y, m - 1, d, 12);
+          const [year, month, day] = key.split("-").map(Number);
+          const date = new Date(year, month - 1, day, 12);
           return dateKey(date) === key ? date : null;
         }
-        function buildEventMap(items) {
-          const map = Object.create(null);
-          for (const event of items) {
-            const start = dateFromKey(event.date || event.start),
-              end = dateFromKey(event.date || event.end);
-            if (!start || !end || end < start) continue;
-            for (let date = start, n = 0; date <= end && n < 370; date = addDays(date, 1), n++) {
-              const key = dateKey(date);
-              map[key] ||= [];
-              if (!map[key].some((e) => e.label === event.label && e.type === event.type))
-                map[key].push({ label: event.label, type: event.type });
-            }
-          }
-          return map;
-        }
-        function offset(date) {
-          return (date.getDay() + (prefs.mondayFirst ? 6 : 0)) % 7;
-        }
-        function same(a, b) {
+
+        function isSameDay(a, b) {
           return dateKey(a) === dateKey(b);
         }
-        function eventsFor(date) {
-          return prefs.showEvents
-            ? (EVENTS[dateKey(date)] || []).filter(
-                (event) => !prefs.hiddenCategories.includes(event.type),
-              )
-            : [];
+
+        function monthStart(date) {
+          return new Date(date.getFullYear(), date.getMonth(), 1, 12);
         }
-        function monthRows() {
-          return Math.ceil(
-            (offset(new Date(selected.getFullYear(), selected.getMonth(), 1, 12)) +
-              new Date(selected.getFullYear(), selected.getMonth() + 1, 0).getDate()) /
-              7,
-          );
+
+        function monthDays(date) {
+          return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
         }
+
+        function offsetForMonth(date) {
+          const first = monthStart(date);
+          return (first.getDay() + (state.prefs.mondayFirst ? 6 : 0)) % 7;
+        }
+
+        function buildEventMap(items) {
+          const map = Object.create(null);
+
+          for (const event of items) {
+            const start = parseKey(event.date || event.start);
+            const end = parseKey(event.date || event.end);
+
+            if (!start || !end || end < start) continue;
+
+            for (let cursor = start; cursor <= end; cursor = addDays(cursor, 1)) {
+              const key = dateKey(cursor);
+              map[key] ||= [];
+              const exists = map[key].some((item) => item.label === event.label && item.type === event.type);
+              if (!exists) {
+                map[key].push({ label: event.label, type: event.type });
+              }
+            }
+          }
+
+          return map;
+        }
+
+        function readPrefs() {
+          try {
+            const raw = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+            if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
+              return { ...DEFAULT_PREFS };
+            }
+
+            return {
+              theme: Object.hasOwn(THEMES, raw.theme) ? raw.theme : DEFAULT_PREFS.theme,
+              mode: ["light", "dark", "system"].includes(raw.mode) ? raw.mode : DEFAULT_PREFS.mode,
+              view: ["auto", "month", "week"].includes(raw.view) ? raw.view : DEFAULT_PREFS.view,
+              mondayFirst: raw.mondayFirst !== false,
+              showEvents: raw.showEvents !== false,
+              hiddenCategories: Array.isArray(raw.hiddenCategories)
+                ? raw.hiddenCategories.filter((category) => Object.hasOwn(CATEGORIES, category))
+                : [],
+            };
+          } catch {
+            return { ...DEFAULT_PREFS };
+          }
+        }
+
+        function savePrefs() {
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state.prefs));
+            $("saveNote").textContent = "These choices are saved in this browser.";
+          } catch {
+            $("saveNote").textContent = "Browser storage is unavailable. Choices apply until this page closes.";
+          }
+        }
+
+        function getVisibleEvents(date) {
+          if (!state.prefs.showEvents) return [];
+          const key = dateKey(date);
+          return (EVENTS[key] || []).filter((event) => !state.prefs.hiddenCategories.includes(event.type));
+        }
+
+        function getPreferredView() {
+          if (state.prefs.view !== "auto") return state.prefs.view;
+          const width = card.clientWidth || window.innerWidth;
+          return width >= 420 ? "month" : "week";
+        }
+
+        function isDarkMode() {
+          if (state.prefs.mode === "dark") return true;
+          if (state.prefs.mode === "light") return false;
+          return mediaQuery ? mediaQuery.matches : false;
+        }
+
         function applyTheme() {
-          const [, tint, accent] = THEMES[prefs.theme],
-            dark = prefs.mode === "dark" || (prefs.mode === "system" && media.matches);
-          const style = document.documentElement.style;
-          const vars = dark
+          const [, tint, accent] = THEMES[state.prefs.theme] || THEMES.default;
+          const dark = isDarkMode();
+          const styles = document.documentElement.style;
+          const variables = dark
             ? {
                 surface: "#252429",
                 ink: "#f3f0f6",
                 muted: "#bbb4c3",
                 line: "#48434e",
                 soft: "#302d34",
-                tint: "#403648",
-                accent: "#bba3ce",
+                tint: "color-mix(in srgb, " + tint + " 15%, #252429)",
+                accent: "color-mix(in srgb, " + tint + " 85%, white)",
               }
             : {
                 surface: "#ffffff",
@@ -992,352 +1002,474 @@
                 tint,
                 accent,
               };
-          if (dark) {
-            vars.tint = "color-mix(in srgb, " + tint + " 15%, #252429)";
-            vars.accent = "color-mix(in srgb, " + tint + " 85%, white)";
-          }
-          for (const [key, value] of Object.entries(vars)) style.setProperty("--" + key, value);
-          style.colorScheme = dark ? "dark" : "light";
-          // Dark today's pale accent needs dark text for contrast.
-          card.style.setProperty("--today-ink", dark ? "#252429" : "#ffffff");
-          style.setProperty("--today-ink", dark ? "#252429" : "#ffffff");
-          $("themeSelect").value = prefs.theme;
-          $("modeSelect").value = prefs.mode;
-          $("viewSelect").value = prefs.view;
-          $("mondayToggle").checked = prefs.mondayFirst;
-          $("eventsToggle").checked = prefs.showEvents;
-          document.querySelectorAll("[data-category]").forEach((input) => {
-            input.checked = !prefs.hiddenCategories.includes(input.dataset.category);
-            input.disabled = !prefs.showEvents;
+
+          Object.entries(variables).forEach(([key, value]) => {
+            styles.setProperty(`--${key}`, value);
           });
+
+          styles.colorScheme = dark ? "dark" : "light";
         }
-        function select(date, focus = false, retainPreferred = false) {
-          selected = localDay(date);
-          if (!retainPreferred) preferredDay = selected.getDate();
-          layout();
-          render(focus);
-        }
-        function moveMonth(delta, focus = false) {
-          const target = new Date(selected.getFullYear(), selected.getMonth() + delta, 1, 12);
-          const last = new Date(target.getFullYear(), target.getMonth() + 1, 0, 12).getDate();
-          select(
-            new Date(target.getFullYear(), target.getMonth(), Math.min(preferredDay, last), 12),
-            focus,
-            true,
-          );
-        }
-        // 5. Layout uses the widget's measured box, not the surrounding page.
-        function layout() {
-          const { width, height } = card.getBoundingClientRect();
-          const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-          // Reserve six rows even in shorter months: navigation must not change the view.
-          const count = monthRows(),
-            need = 136 + 6 * 32 * (rem / 16);
-          view = prefs.view === "auto" ? (height < need ? "week" : "month") : prefs.view;
-          card.dataset.view = view;
-          card.dataset.layout =
-            width >= 660 && height >= 330 && view === "month" ? "wide" : "stack";
-          card.dataset.tight = height < 300 ? "true" : "false";
-          rows = view === "week" ? 1 : count;
-          card.style.setProperty("--rows", rows);
-        }
-        function eventList(target, date) {
-          target.replaceChildren();
-          const items = eventsFor(date);
-          if (!items.length) {
-            const p = document.createElement("p");
-            p.className = "empty";
-            p.textContent = emptyText(date);
-            target.append(p);
-            return;
-          }
-          const list = document.createElement("ul");
-          list.className = "events";
-          for (const event of items) {
-            const [label, color] = CATEGORIES[event.type] || ["Date", "#68636e"];
-            const li = document.createElement("li");
-            li.className = "event";
-            const dot = document.createElement("span");
-            dot.className = "dot";
-            dot.style.setProperty("--event-color", color);
-            dot.setAttribute("aria-hidden", "true");
-            const text = document.createElement("div");
-            text.className = "event-title";
-            text.textContent = event.label;
-            const meta = document.createElement("span");
-            meta.className = "event-meta";
-            meta.textContent = "All day · " + label;
-            text.append(meta);
-            li.append(dot, text);
-            list.append(li);
-          }
-          target.append(list);
-        }
-        function emptyText(date) {
-          return !prefs.showEvents
-            ? "Preset dates are hidden"
-            : !eventYears.has(date.getFullYear())
-              ? "No preset dates loaded for " + date.getFullYear()
-              : (EVENTS[dateKey(date)] || []).length
-                ? "Dates hidden by category filters"
-                : "No preset dates for this day";
-        }
-        // 6. Render the accessible grid and selected-day details.
-        function render(focus = false) {
-          const monthStart = new Date(selected.getFullYear(), selected.getMonth(), 1, 12);
-          const start =
-            view === "week"
-              ? addDays(selected, -offset(selected))
-              : addDays(monthStart, -offset(monthStart));
-          $("monthTitle").textContent = monthFormat.format(selected);
-          $("viewLabel").textContent =
-            view === "week"
-              ? "Week view · " +
-                shortDate.format(start) +
-                " – " +
-                shortDate.format(addDays(start, 6))
-              : "Month view";
-          for (const [id, label] of [
-            ["previous", "Previous"],
-            ["next", "Next"],
-          ]) {
-            const text = label + " " + view;
-            $(id).setAttribute("aria-label", text);
-            $(id).title = text;
-          }
-          const names = prefs.mondayFirst
-            ? ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-            : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-          $("weekdays").replaceChildren(
-            ...names.map((name) => {
-              const el = document.createElement("span");
-              el.role = "columnheader";
-              el.setAttribute("aria-label", name);
-              el.textContent = name.slice(0, 2);
-              return el;
+
+        function renderWeekdayLabels() {
+          const container = $("weekdays");
+          const labels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+          const firstDay = state.prefs.mondayFirst ? labels.slice(1).concat(labels[0]) : labels;
+
+          container.replaceChildren(
+            ...firstDay.map((label) => {
+              const span = document.createElement("span");
+              span.textContent = label;
+              return span;
             }),
           );
-          $("weeks").replaceChildren();
-          let selectedButton;
-          for (let row = 0; row < rows; row++) {
-            const week = document.createElement("div");
-            week.className = "week";
-            week.role = "row";
-            for (let col = 0; col < 7; col++) {
-              const date = addDays(start, row * 7 + col),
-                isToday = same(date, today),
-                isSelected = same(date, selected),
-                items = eventsFor(date);
-              const cell = document.createElement("div");
-              cell.className = "cell";
-              cell.role = "gridcell";
-              cell.setAttribute("aria-selected", String(isSelected));
-              const button = document.createElement("button");
-              button.className = "day";
-              button.type = "button";
-              button.dataset.date = dateKey(date);
-              button.tabIndex = isSelected ? 0 : -1;
-              button.setAttribute(
-                "aria-label",
-                fullDate.format(date) +
-                  (items.length
-                    ? ", " + items.length + " preset " + (items.length === 1 ? "event" : "events")
-                    : ""),
-              );
-              const number = document.createElement("span");
-              number.textContent = date.getDate();
-              button.append(number);
-              if (date.getMonth() !== selected.getMonth()) button.classList.add("outside");
-              if (isToday) {
-                button.classList.add("today");
-                button.setAttribute("aria-current", "date");
-                button.style.color = "var(--today-ink)";
-                week.classList.add("current");
-              }
-              if (isSelected) {
-                button.classList.add("selected");
-                selectedButton = button;
-              }
+        }
+
+        function renderCalendar() {
+          const weeks = $("weeks");
+          const monthStartDate = monthStart(state.monthCursor);
+          const maxDays = monthDays(state.monthCursor);
+          const offset = offsetForMonth(state.monthCursor);
+          const totalCells = Math.ceil((offset + maxDays) / 7) * 7;
+          const fragment = document.createDocumentFragment();
+          const rows = Math.ceil(totalCells / 7);
+
+          card.style.setProperty("--rows", rows);
+
+          for (let index = 0; index < totalCells; index++) {
+            const currentDate = addDays(monthStartDate, index - offset);
+            const cell = document.createElement("div");
+            cell.className = "cell";
+
+            const day = document.createElement("button");
+            const visibleEvents = getVisibleEvents(currentDate);
+            const isSelected = isSameDay(currentDate, state.selected);
+            const isToday = isSameDay(currentDate, state.today);
+            const isCurrentMonth = currentDate.getMonth() === state.monthCursor.getMonth();
+
+            day.type = "button";
+            day.className = "day";
+            day.dataset.date = dateKey(currentDate);
+            day.setAttribute("aria-label", `${fullDate.format(currentDate)}${isToday ? ", today" : ""}${visibleEvents.length ? ", has events" : ""}`);
+            day.setAttribute("aria-pressed", isSelected ? "true" : "false");
+
+            if (!isCurrentMonth) day.classList.add("outside");
+            if (isToday) day.classList.add("today");
+            if (isSelected) day.classList.add("selected");
+
+            const label = document.createElement("span");
+            label.textContent = String(currentDate.getDate());
+            day.appendChild(label);
+
+            if (visibleEvents.length) {
               const dots = document.createElement("span");
               dots.className = "dots";
-              dots.setAttribute("aria-hidden", "true");
-              for (const type of [...new Set(items.map((e) => e.type))].slice(0, 3)) {
+              const slice = visibleEvents.slice(0, 3);
+              slice.forEach((event) => {
                 const dot = document.createElement("span");
                 dot.className = "dot";
-                dot.style.setProperty("--event-color", (CATEGORIES[type] || [])[1] || "#68636e");
-                dots.append(dot);
-              }
-              button.append(dots);
-              cell.append(button);
-              week.append(cell);
+                dot.style.setProperty("--event-color", CATEGORIES[event.type]?.[1] || "var(--accent)");
+                dots.appendChild(dot);
+              });
+              day.appendChild(dots);
             }
-            $("weeks").append(week);
+
+            day.addEventListener("click", () => {
+              state.selected = startOfDay(currentDate);
+              render();
+            });
+
+            cell.appendChild(day);
+            fragment.appendChild(cell);
           }
-          const items = eventsFor(selected);
-          $("selectedLabel").textContent = shortDate.format(selected);
-          $("summary").textContent = items.length
-            ? items[0].label + (items.length > 1 ? " · +" + (items.length - 1) : "")
-            : emptyText(selected);
-          $("detailsButton").disabled = !items.length;
-          $("detailAction").hidden = !items.length;
-          $("detailsButton").setAttribute(
-            "aria-label",
-            items.length
-              ? "View " + items.length + " preset events for " + fullDate.format(selected)
-              : emptyText(selected),
-          );
-          $("agendaDate").textContent = shortDate.format(selected);
-          eventList($("agendaContent"), selected);
-          $("status").textContent = fullDate.format(selected);
-          if (focus) selectedButton?.focus({ preventScroll: true });
+
+          weeks.replaceChildren(fragment);
         }
-        // 7. Pointer, keyboard, dialog and preference interactions.
-        $("weeks").addEventListener("click", (event) => {
-          const button = event.target.closest("[data-date]");
-          if (button) select(dateFromKey(button.dataset.date), true);
-        });
-        $("dateGrid").addEventListener("keydown", (event) => {
-          const moves = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 };
-          if (Object.hasOwn(moves, event.key)) {
-            event.preventDefault();
-            select(addDays(selected, moves[event.key]), true);
-          } else if (event.key === "Home" || event.key === "End") {
-            event.preventDefault();
-            select(addDays(selected, (event.key === "Home" ? 0 : 6) - offset(selected)), true);
-          } else if (event.key === "PageUp" || event.key === "PageDown") {
-            event.preventDefault();
-            moveMonth((event.key === "PageUp" ? -1 : 1) * (event.shiftKey ? 12 : 1), true);
+
+        function renderAgenda() {
+          const agendaDate = $("agendaDate");
+          const agendaContent = $("agendaContent");
+          const visible = getVisibleEvents(state.selected);
+
+          agendaDate.textContent = fullDate.format(state.selected);
+
+          if (!visible.length) {
+            agendaContent.innerHTML = '<p class="empty">No preset dates or observances for this day.</p>';
+            return;
           }
-        });
-        $("previous").onclick = () =>
-          view === "week" ? select(addDays(selected, -7)) : moveMonth(-1);
-        $("next").onclick = () => (view === "week" ? select(addDays(selected, 7)) : moveMonth(1));
-        $("todayButton").onclick = () => {
-          today = localDay(new Date());
-          select(today);
-        };
-        $("settingsButton").onclick = () => $("settings").showModal();
-        // A native form provides validation, Enter submission, and keyboard access.
-        for (let month = 0; month < 12; month++) {
-          const option = document.createElement("option");
-          option.value = month;
-          option.textContent = new Intl.DateTimeFormat("en-AU", { month: "long" }).format(
-            new Date(2026, month, 1),
-          );
-          $("jumpMonth").append(option);
-        }
-        $("monthTitle").onclick = () => {
-          $("jumpMonth").value = selected.getMonth();
-          $("jumpYear").value = selected.getFullYear();
-          $("jumpDialog").showModal();
-        };
-        $("jumpForm").onsubmit = (event) => {
-          event.preventDefault();
-          const year = Number($("jumpYear").value),
-            month = Number($("jumpMonth").value);
-          if (!Number.isInteger(year) || year < 1900 || year > 2100) return;
-          const last = new Date(year, month + 1, 0).getDate();
-          select(new Date(year, month, Math.min(preferredDay, last), 12), false, true);
-          $("jumpDialog").close();
-        };
-        for (const [key, [label]] of Object.entries(CATEGORIES)) {
-          const row = document.createElement("label");
-          row.className = "check";
-          const input = document.createElement("input");
-          input.type = "checkbox";
-          input.dataset.category = key;
-          input.onchange = () => {
-            prefs.hiddenCategories = Object.keys(CATEGORIES).filter(
-              (category) =>
-                !$("categoryFilters").querySelector('[data-category="' + category + '"]').checked,
-            );
-            save();
-            render();
-          };
-          row.append(input, document.createTextNode(label));
-          $("categoryFilters").append(row);
-        }
-        $("detailsButton").onclick = () => {
-          $("eventTitle").textContent = fullDate.format(selected);
-          eventList($("eventContent"), selected);
-          $("eventDialog").showModal();
-        };
-        document
-          .querySelectorAll("[data-close]")
-          .forEach((button) => (button.onclick = () => button.closest("dialog").close()));
-        document.querySelectorAll("dialog").forEach((dialog) =>
-          dialog.addEventListener("click", (event) => {
-            if (event.target !== dialog) return;
-            const r = dialog.getBoundingClientRect();
-            if (
-              event.clientX < r.left ||
-              event.clientX > r.right ||
-              event.clientY < r.top ||
-              event.clientY > r.bottom
-            )
-              dialog.close();
-          }),
-        );
-        for (const [name, [label]] of Object.entries(THEMES)) {
-          const option = document.createElement("option");
-          option.value = name;
-          option.textContent = label;
-          $("themeSelect").append(option);
-        }
-        for (const [id, key] of [
-          ["themeSelect", "theme"],
-          ["modeSelect", "mode"],
-          ["viewSelect", "view"],
-          ["mondayToggle", "mondayFirst"],
-          ["eventsToggle", "showEvents"],
-        ]) {
-          $(id).addEventListener("change", (event) => {
-            prefs[key] =
-              event.target.type === "checkbox" ? event.target.checked : event.target.value;
-            save();
-            applyTheme();
-            layout();
-            render();
+
+          const list = document.createElement("ul");
+          list.className = "events";
+
+          visible.forEach((event) => {
+            const item = document.createElement("li");
+            item.className = "event";
+
+            const dot = document.createElement("span");
+            dot.className = "dot";
+            dot.style.setProperty("--event-color", CATEGORIES[event.type]?.[1] || "var(--accent)");
+
+            const body = document.createElement("div");
+            const title = document.createElement("div");
+            title.className = "event-title";
+            title.textContent = event.label;
+
+            const meta = document.createElement("span");
+            meta.className = "event-meta";
+            meta.textContent = CATEGORIES[event.type]?.[0] || "Event";
+
+            body.appendChild(title);
+            body.appendChild(meta);
+            item.appendChild(dot);
+            item.appendChild(body);
+            list.appendChild(item);
           });
+
+          agendaContent.replaceChildren(list);
         }
-        $("resetButton").onclick = () => {
-          prefs = { ...defaults };
-          save();
+
+        function renderHeader() {
+          $("monthTitle").textContent = monthFormat.format(state.monthCursor);
+          $("viewLabel").textContent = state.prefs.view === "auto"
+            ? `View: ${getPreferredView()}`
+            : `View: ${state.prefs.view}`;
+
+          const summaryText = eventSummaryFor(state.selected);
+          $("selectedLabel").textContent = shortDate.format(state.selected);
+          $("summary").textContent = summaryText || "No events";
+          $("detailAction").textContent = getVisibleEvents(state.selected).length ? "View" : "Open";
+          $("status").textContent = `${fullDate.format(state.selected)} selected`;
+        }
+
+        function eventSummaryFor(date) {
+          const visible = getVisibleEvents(date);
+          if (!visible.length) return "No preset dates";
+          return visible.slice(0, 2).map((event) => event.label).join(" • ");
+        }
+
+        function syncSettingsControls() {
+          $("themeSelect").value = state.prefs.theme;
+          $("modeSelect").value = state.prefs.mode;
+          $("viewSelect").value = state.prefs.view;
+          $("mondayToggle").checked = state.prefs.mondayFirst;
+          $("eventsToggle").checked = state.prefs.showEvents;
+
+          const categoryContainer = $("categoryFilters");
+          categoryContainer.replaceChildren(
+            ...Object.entries(CATEGORIES).map(([key, [label]]) => {
+              const labelEl = document.createElement("label");
+              labelEl.className = "check";
+
+              const checkbox = document.createElement("input");
+              checkbox.type = "checkbox";
+              checkbox.checked = !state.prefs.hiddenCategories.includes(key);
+              checkbox.dataset.category = key;
+
+              const text = document.createElement("span");
+              text.textContent = label;
+
+              labelEl.appendChild(checkbox);
+              labelEl.appendChild(text);
+              return labelEl;
+            }),
+          );
+        }
+
+        function updateLayoutState() {
+          const autoView = getPreferredView();
+          state.view = state.prefs.view === "auto" ? autoView : state.prefs.view;
+
+          card.dataset.view = state.view;
+          card.dataset.layout = card.clientWidth >= 420 ? "wide" : "normal";
+          card.dataset.tight = String(card.clientWidth < 260);
+        }
+
+        function render() {
           applyTheme();
-          layout();
-          render();
-        };
-        // 8. Respond to embed resizing and refresh today after midnight.
-        function resize() {
-          cancelAnimationFrame(resizeFrame);
-          resizeFrame = requestAnimationFrame(() => {
-            const hadFocus = $("weeks").contains(document.activeElement);
-            layout();
-            render(hadFocus);
-          });
+          renderWeekdayLabels();
+          renderCalendar();
+          renderAgenda();
+          renderHeader();
+          syncSettingsControls();
+          updateLayoutState();
         }
-        if (typeof ResizeObserver === "function") new ResizeObserver(resize).observe(card);
-        addEventListener("resize", resize);
-        media.addEventListener("change", applyTheme);
-        function refreshDay() {
-          const now = localDay(new Date());
-          if (!same(now, today)) {
-            const followed = same(selected, today);
-            today = now;
-            if (followed) selected = localDay(now);
-            layout();
-            render();
+
+        function closeDialog(dialog) {
+          if (dialog && typeof dialog.close === "function") {
+            dialog.close();
           }
         }
-        document.addEventListener("visibilitychange", () => {
-          if (!document.hidden) refreshDay();
-        });
-        setInterval(refreshDay, 60000);
-        applyTheme();
-        layout();
-        render();
+
+        function openDialog(dialog) {
+          if (dialog && typeof dialog.showModal === "function") {
+            dialog.showModal();
+          }
+        }
+
+        function updateJumpMonthSelect() {
+          const select = $("jumpMonth");
+          const monthNames = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ];
+
+          select.innerHTML = monthNames
+            .map((month, index) => `<option value="${index}">${month}</option>`)
+            .join("");
+          select.value = String(state.monthCursor.getMonth());
+        }
+
+        function bindEvents() {
+          $("previous").addEventListener("click", () => {
+            state.monthCursor = new Date(
+              state.monthCursor.getFullYear(),
+              state.monthCursor.getMonth() - 1,
+              1,
+            );
+            state.selected = new Date(
+              state.monthCursor.getFullYear(),
+              state.monthCursor.getMonth(),
+              Math.min(state.selected.getDate(), monthDays(state.monthCursor)),
+              12,
+            );
+            render();
+          });
+
+          $("next").addEventListener("click", () => {
+            state.monthCursor = new Date(
+              state.monthCursor.getFullYear(),
+              state.monthCursor.getMonth() + 1,
+              1,
+            );
+            state.selected = new Date(
+              state.monthCursor.getFullYear(),
+              state.monthCursor.getMonth(),
+              Math.min(state.selected.getDate(), monthDays(state.monthCursor)),
+              12,
+            );
+            render();
+          });
+
+          $("todayButton").addEventListener("click", () => {
+            state.selected = cloneDate(state.today);
+            state.monthCursor = new Date(state.today.getFullYear(), state.today.getMonth(), 1, 12);
+            render();
+          });
+
+          $("monthTitle").addEventListener("click", () => {
+            updateJumpMonthSelect();
+            $("jumpYear").value = String(state.monthCursor.getFullYear());
+            openDialog(jumpDialog);
+          });
+
+          $("settingsButton").addEventListener("click", () => {
+            syncSettingsControls();
+            openDialog(settingsDialog);
+          });
+
+          $("detailsButton").addEventListener("click", () => {
+            const events = getVisibleEvents(state.selected);
+            const eventTitle = $("eventTitle");
+            const eventContent = $("eventContent");
+
+            eventTitle.textContent = fullDate.format(state.selected);
+            if (!events.length) {
+              eventContent.innerHTML = '<p class="empty">No preset dates or observances for this day.</p>';
+              openDialog(eventDialog);
+              return;
+            }
+
+            const list = document.createElement("ul");
+            list.className = "events";
+
+            events.forEach((event) => {
+              const item = document.createElement("li");
+              item.className = "event";
+
+              const dot = document.createElement("span");
+              dot.className = "dot";
+              dot.style.setProperty("--event-color", CATEGORIES[event.type]?.[1] || "var(--accent)");
+
+              const body = document.createElement("div");
+              const title = document.createElement("div");
+              title.className = "event-title";
+              title.textContent = event.label;
+
+              const meta = document.createElement("span");
+              meta.className = "event-meta";
+              meta.textContent = CATEGORIES[event.type]?.[0] || "Event";
+
+              body.appendChild(title);
+              body.appendChild(meta);
+              item.appendChild(dot);
+              item.appendChild(body);
+              list.appendChild(item);
+            });
+
+            eventContent.replaceChildren(list);
+            openDialog(eventDialog);
+          });
+
+          document.addEventListener("click", (event) => {
+            const closeTarget = event.target.closest("[data-close]");
+            if (closeTarget) {
+              const dialog = closeTarget.closest("dialog");
+              if (dialog) closeDialog(dialog);
+            }
+          });
+
+          $("themeSelect").addEventListener("change", (event) => {
+            state.prefs.theme = event.target.value;
+            savePrefs();
+            render();
+          });
+
+          $("modeSelect").addEventListener("change", (event) => {
+            state.prefs.mode = event.target.value;
+            savePrefs();
+            render();
+          });
+
+          $("viewSelect").addEventListener("change", (event) => {
+            state.prefs.view = event.target.value;
+            savePrefs();
+            render();
+          });
+
+          $("mondayToggle").addEventListener("change", (event) => {
+            state.prefs.mondayFirst = event.target.checked;
+            savePrefs();
+            render();
+          });
+
+          $("eventsToggle").addEventListener("change", (event) => {
+            state.prefs.showEvents = event.target.checked;
+            savePrefs();
+            render();
+          });
+
+          $("categoryFilters").addEventListener("change", (event) => {
+            const target = event.target;
+            if (!(target instanceof HTMLInputElement)) return;
+
+            const { category } = target.dataset;
+            if (!category) return;
+
+            if (target.checked) {
+              state.prefs.hiddenCategories = state.prefs.hiddenCategories.filter((id) => id !== category);
+            } else {
+              if (!state.prefs.hiddenCategories.includes(category)) {
+                state.prefs.hiddenCategories.push(category);
+              }
+            }
+
+            savePrefs();
+            render();
+          });
+
+          $("resetButton").addEventListener("click", () => {
+            state.prefs = { ...DEFAULT_PREFS };
+            savePrefs();
+            render();
+          });
+
+          $("jumpForm").addEventListener("submit", (event) => {
+            event.preventDefault();
+            const month = Number($("jumpMonth").value);
+            const year = Number($("jumpYear").value);
+            if (!Number.isFinite(year)) return;
+
+            state.monthCursor = new Date(year, month, 1, 12);
+            state.selected = new Date(year, month, Math.min(state.selected.getDate(), monthDays(state.monthCursor)), 12);
+            closeDialog(jumpDialog);
+            render();
+          });
+
+          document.addEventListener("keydown", (event) => {
+            if (!event.target || event.target.closest("input, select, textarea")) return;
+
+            const delta = event.shiftKey ? 30 : 1;
+            if (event.key === "ArrowRight") {
+              state.selected = addDays(state.selected, 1);
+              state.monthCursor = monthStart(state.selected);
+              render();
+            } else if (event.key === "ArrowLeft") {
+              state.selected = addDays(state.selected, -1);
+              state.monthCursor = monthStart(state.selected);
+              render();
+            } else if (event.key === "ArrowUp") {
+              state.selected = addDays(state.selected, -7);
+              state.monthCursor = monthStart(state.selected);
+              render();
+            } else if (event.key === "ArrowDown") {
+              state.selected = addDays(state.selected, 7);
+              state.monthCursor = monthStart(state.selected);
+              render();
+            } else if (event.key === "PageUp") {
+              state.monthCursor = new Date(state.monthCursor.getFullYear(), state.monthCursor.getMonth() - 1, 1, 12);
+              state.selected = new Date(state.monthCursor.getFullYear(), state.monthCursor.getMonth(), 1, 12);
+              render();
+            } else if (event.key === "PageDown") {
+              state.monthCursor = new Date(state.monthCursor.getFullYear(), state.monthCursor.getMonth() + 1, 1, 12);
+              state.selected = new Date(state.monthCursor.getFullYear(), state.monthCursor.getMonth(), 1, 12);
+              render();
+            } else if (event.key === "Home") {
+              const first = state.prefs.mondayFirst ? 1 : 0;
+              const date = new Date(state.selected);
+              const offset = (date.getDay() + (state.prefs.mondayFirst ? 6 : 0)) % 7;
+              state.selected = addDays(date, first - offset - (state.prefs.mondayFirst ? 1 : 0));
+              state.monthCursor = monthStart(state.selected);
+              render();
+            } else if (event.key === "End") {
+              const date = new Date(state.selected);
+              const offset = (date.getDay() + (state.prefs.mondayFirst ? 6 : 0)) % 7;
+              state.selected = addDays(date, 6 - offset + (state.prefs.mondayFirst ? 0 : 1));
+              state.monthCursor = monthStart(state.selected);
+              render();
+            } else if (event.key === "t" || event.key === "T") {
+              state.selected = cloneDate(state.today);
+              state.monthCursor = new Date(state.today.getFullYear(), state.today.getMonth(), 1, 12);
+              render();
+            }
+          });
+
+          window.addEventListener("resize", () => {
+            clearTimeout(window.__calendarResizeTimer);
+            window.__calendarResizeTimer = setTimeout(() => {
+              render();
+            }, 80);
+          });
+        }
+
+        function init() {
+          $("themeSelect").innerHTML = Object.entries(THEMES)
+            .map(([key, [label]]) => `<option value="${key}">${label}</option>`)
+            .join("");
+
+          updateJumpMonthSelect();
+          bindEvents();
+          render();
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const preview = params.get("preview") === "1" && !params.has("embed");
+        document.body.classList.toggle("preview", preview);
+
+        if (mediaQuery) {
+          mediaQuery.addEventListener?.("change", render);
+        }
+
+        init();
       })();
     </script>
   </body>
 </html>
-
